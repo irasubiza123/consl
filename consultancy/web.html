@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Elite Consultancy</title>
+  
+</head>
+<body>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #0a3d62;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero {
+  background: url('images/pexels-expect-best-79873-323705.jpg') center/cover;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero button {
+  padding: 10px 20px;
+  margin-top: 15px;
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.service-card {
+  background-color: white;
+  padding: 20px;
+  width: 280px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  background-color: #0a3d62;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  font-size: 1em;
+}
+
+.form-message {
+  margin-top: 15px;
+  color: green;
+}
+
+footer {
+  background-color: #0a3d62;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+    </style>
+  <header>
+    <h1>Elite Consultancy</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <h2>Your Trusted Business Advisor</h2>
+    <p>Helping businesses grow with expert advice.</p>
+    <button onclick="scrollToSection('contact')">Get In Touch</button>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>We are a professional consultancy firm offering strategic, financial, and marketing solutions for startups and enterprises.</p>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services-container">
+      <div class="service-card">
+        <h3>Business Strategy</h3>
+        <p>Tailored plans to grow your business sustainably.</p>
+      </div>
+      <div class="service-card">
+        <h3>Financial Planning</h3>
+        <p>Get control over budgeting, forecasting, and investments.</p>
+      </div>
+      <div class="service-card">
+        <h3>Marketing Consulting</h3>
+        <p>Drive engagement through digital and offline channels.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <p id="formMessage" class="form-message"></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Elite Consultancy. All rights reserved.</p>
+  </footer>
+
+  <script>
+function scrollToSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  section.scrollIntoView({ behavior: "smooth" });
+}
+
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  document.getElementById("formMessage").textContent = "Message sent successfully!";
+  this.reset();
+});
+
+  </script> 
+</body>
+</html>
